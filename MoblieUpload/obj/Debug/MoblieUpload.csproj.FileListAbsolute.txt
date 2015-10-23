@@ -1,5 +1,0 @@
-E:\Private\MoblieUpload\MoblieUpload\bin\MoblieUpload.dll
-E:\Private\MoblieUpload\MoblieUpload\bin\MoblieUpload.pdb
-E:\Private\MoblieUpload\MoblieUpload\obj\Debug\MoblieUpload.dll
-E:\Private\MoblieUpload\MoblieUpload\obj\Debug\MoblieUpload.pdb
-E:\Private\MoblieUpload\MoblieUpload\obj\Debug\MoblieUpload.csprojResolveAssemblyReference.cache
