@@ -1,0 +1,4 @@
+E:\Private\MoblieUpload\MoblieUpload\bin\MoblieUpload.dll
+E:\Private\MoblieUpload\MoblieUpload\bin\MoblieUpload.pdb
+E:\Private\MoblieUpload\MoblieUpload\obj\Release\MoblieUpload.dll
+E:\Private\MoblieUpload\MoblieUpload\obj\Release\MoblieUpload.pdb

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <title></title>
+    <script type="text/javascript" src="script/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="script/jquery-1.8.2.min.js"></script>
+
+    <script type="text/javascript" src="script/LocalResizeIMG.js"></script>
+    <script type="text/javascript" src="script/mobileBUGFix.mini.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $("input:file").localResizeIMG({
+                width: 500,
+                quality: 0.8,
+                success: function (result) {
+                    var img = new Image();
+                    img.src = result.base64;
+                    console.log(result.clearBase64);
+                    //$("body").append(img);
+                    $("#result").empty();
+                    $("#result").append(img); //呈现图像(拍照結果)
+                    $.ajax({
+                        url: "UploadHandler.ashx",
+                        type: "POST",
+                        data: { formFile: result.clearBase64 },
+                        dataType: "HTML",
+                        timeout: 1000,
+                        error: function () {
+                            alert("Error loading PHP document");
+                        },
+                        success: function (result) {
+                            //alert(result);
+                            //console.log(result);
+                            alert("Uploads success~")
+                        }
+                    });
+                }
+            });
+        })
+
+        
+    </script>
+
+    <style>
+        body {
+            margin: 20px 20%;
+            color: #777;
+            text-align: center;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">上传证件...</h1>
+    <hr />
+    <input type="file" />
+    <div id="result" align="center"></div>
+    <hr />
+</body>
+</html>
